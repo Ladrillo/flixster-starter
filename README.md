@@ -12,27 +12,27 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### REQUIRED FEATURES
 
-- [ ] **Display Movies**
-  - [ ] Users can view a list of current movies from The Movie Database API in a grid view.
-    - [ ] Movie tiles should be reasonably sized (at least 6 playlists on your laptop when full screen; large enough that the playlist components detailed in the next feature are legible).
-  - [ ] For each movie displayed, users can see the movie's:
-    - [ ] Title
-    - [ ] Poster image
-    - [ ] Votes
-  - [ ] Users can load more current movies by clicking a button at the bottom of the list, which automatically updates page with new movies (no reloading by clicking the browser's refresh button).
-- [ ] **Search Functionality**
-  - [ ] Users can use a search bar to search for movies by title.
-  - [ ] The search bar should include:
-    - [ ] Text input field
-    - [ ] Submit/Search button
-    - [ ] Clear button
-  - [ ] Movies with a title containing the search query in the text input field are displayed in a grid view when the user either:
-    - [ ] Presses the Enter key
-    - [ ] Clicks the Submit/Search button
-  - [ ] Users can click the Clear button. When clicked:
-    - [ ] Most recent search results are cleared and all current movies are displayed in a grid view
-- [ ] **Design Features**
-  - [ ] Website implements all of the following accessibility features:
+- [X] **Display Movies**
+  - [X] Users can view a list of current movies from The Movie Database API in a grid view.
+    - [X] Movie tiles should be reasonably sized (at least 6 playlists on your laptop when full screen; large enough that the playlist components detailed in the next feature are legible).
+  - [X] For each movie displayed, users can see the movie's:
+    - [X] Title
+    - [X] Poster image
+    - [X] Votes
+  - [X] Users can load more current movies by clicking a button at the bottom of the list, which automatically updates page with new movies (no reloading by clicking the browser's refresh button).
+- [X] **Search Functionality**
+  - [X] Users can use a search bar to search for movies by title.
+  - [X] The search bar should include:
+    - [X] Text input field
+    - [X] Submit/Search button
+    - [X] Clear button
+  - [X] Movies with a title containing the search query in the text input field are displayed in a grid view when the user either:
+    - [X] Presses the Enter key
+    - [X] Clicks the Submit/Search button
+  - [X] Users can click the Clear button. When clicked:
+    - [X] Most recent search results are cleared and all current movies are displayed in a grid view
+- [X] **Design Features**
+  - [X] Website implements all of the following accessibility features:
     - [ ] Semantic HTML
     - [ ] [Color contrast](https://webaim.org/resources/contrastchecker/)
     - [ ] Alt text for images 

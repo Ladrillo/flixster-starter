@@ -2,15 +2,18 @@ import { useState, useEffect } from 'react'
 import MovieList from './MovieList'
 import './App.css'
 import hardcodeDdata from './data/data'
+import nextPage from './data/movies'
 
 const URL = 'https://api.themoviedb.org/3/movie/now_playing'
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const App = () => {
-  const [nowPlaying, setNowPlaying] = useState({})
+  const [nowPlaying, setNowPlaying] = useState()
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [pageNumber, setPageNumber] = useState(5)
+  const [search, setSearch] = useState('working')
 
   const errorMessage = 'Problem with API, using hard-coded data'
   const loadingMessage = 'Loading your movies...'
@@ -22,7 +25,7 @@ const App = () => {
       setMessage(loadingMessage)
       try {
         throw new Error('Avoiding hammering the real API')
-        const response = await fetch(URL, {
+        const response = await fetch(`${URL}?page=${pageNumber}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${API_KEY}`,
@@ -36,20 +39,27 @@ const App = () => {
         setMessage('')
         console.error(errorMessage)
         setError(errorMessage)
-        setNowPlaying(hardcodeDdata)
+        setNowPlaying(nextPage())
       } finally {
         setMessage(successMessage)
         setLoading(false)
       }
     }
     fetchNowPlaying()
-  }, [])
+  }, [pageNumber])
+
+  function byTitle(movie) {
+    const searchTerm = search.trim().toLowerCase()
+    const actualTitle = movie.original_title.toLowerCase()
+    return actualTitle.includes(searchTerm)
+  }
   return (
     <div className="App">
       {loading && loadingMessage}
       <div className='api-message'>{message}</div>
       <div className='api-error'>{error}</div>
-      <MovieList movies={nowPlaying.results} />
+      <button onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+      {nowPlaying && <MovieList movies={nowPlaying.results.filter(byTitle)} />}
     </div>
   )
 }

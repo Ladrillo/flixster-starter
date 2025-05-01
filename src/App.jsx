@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import MovieList from './MovieList'
 import './App.css'
 import nextPage from './data/movies'
 import SearchBox from './SearchBox'
 import SortSelect from './SortSelect'
+import MovieList from './MovieList'
+import MovieDetails from './MovieDetails'
 import { sorter } from './helpers'
 
 const URL = 'https://api.themoviedb.org/3/movie/now_playing'
@@ -17,6 +18,7 @@ const App = () => {
   const [pageNumber, setPageNumber] = useState(5)
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('')
+  const [currentMovieId, setCurrentMovieId] = useState(null)
 
   const errorMessage = 'Problem with API, using hard-coded data'
   const loadingMessage = 'Loading your movies...'
@@ -58,9 +60,11 @@ const App = () => {
   }
 
   const moviesToDisplay = nowPlaying?.results.filter(byTitle) || []
+  const currentMovie = nowPlaying?.results.find(mov => mov.id === currentMovieId)
 
   return (
     <div className="App">
+      {currentMovie && <MovieDetails movie={currentMovie} />}
       <SearchBox search={search} setSearch={setSearch} />
       <SortSelect sort={sort} setSort={setSort} />
       {loading && loadingMessage}
@@ -68,7 +72,7 @@ const App = () => {
       <div className='api-error'>{error}</div>
       <button onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
       {moviesToDisplay.length
-        ? <MovieList movies={sorter(moviesToDisplay, sort)} />
+        ? <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
         : <div>No movies here!</div>}
     </div>
   )

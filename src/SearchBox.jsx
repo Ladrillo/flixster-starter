@@ -15,7 +15,7 @@ export default function SearchBox({ search, setSearch }) {
         setValue('')
     }
     return (
-        <div>
+        <div className='search-box'>
             <form onSubmit={onSubmit}>
                 <input
                     type="text"

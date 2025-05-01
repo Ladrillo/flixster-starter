@@ -2,14 +2,15 @@
   text-align: center;
 }
 
-.App-header {
+header {
   background-color: #282c34;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: white;
   padding: 20px;
+  height: 150px;
 }
 
 @media (max-width: 600px) {
@@ -25,6 +26,16 @@
   .search-bar form {
     flex-direction: column;
   }
+}
+
+.search-box {
+  display: flex;
+}
+
+.header-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 button {
@@ -88,8 +99,4 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-header {
-  background-color: gray;
 }

@@ -65,26 +65,29 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <SearchBox search={search} setSearch={setSearch} />
-        <SortSelect sort={sort} setSort={setSort} />
+        <h1>🎬 Flixter 🎥</h1>
+        <div className='header-bottom'>
+          <SearchBox search={search} setSearch={setSearch} />
+          <SortSelect sort={sort} setSort={setSort} />
+        </div>
       </header>
       <main>
-        <div className="messages">
+        {false && <div className="messages">
           {loading && <div className='loading-message'>{loadingMessage}</div>}
           <div className='api-message'>{message}</div>
           <div className='api-error'>{error}</div>
-        </div>
+        </div>}
         {moviesToDisplay.length
           ? <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
           : <div>No movies here!</div>}
         <div>
           <button onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
         </div>
-        {currentMovie && <MovieDetails movie={currentMovie} />}
       </main>
       <footer>
         <p>© {new Date().getFullYear()} Flixter</p>
       </footer>
+      {currentMovie && <MovieDetails movie={currentMovie} />}
     </div>
   )
 }

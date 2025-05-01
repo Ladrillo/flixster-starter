@@ -11,7 +11,7 @@ export function sorter(movies, criteria) {
             )
         case 'rating':
             return sorted.sort((a, b) =>
-                b.popularity - a.popularity
+                b.vote_average - a.vote_average
             )
         default:
             return movies

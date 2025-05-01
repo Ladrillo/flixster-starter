@@ -2,7 +2,7 @@ import MovieCard from './MovieCard'
 
 export default function MovieList({ movies, setCurrentMovie }) {
     return (
-        <div>
+        <div className='movie-list'>
             {movies && movies.map(mov => {
                 const setCurrent = () => setCurrentMovie(mov.id)
                 return (

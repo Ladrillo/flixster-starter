@@ -40,3 +40,56 @@ button:hover {
   background-color: #777;
   color: white;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  border: 1px solid #cdcbcb;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 185px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 1px 3px #0000000d, 0 4px 6px #0000001a;
+  }
+
+  .info {
+    padding: 0.5rem;
+    width: 100%;
+
+    p {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 0.85rem;
+      
+      &:first-of-type {
+        font-weight: bold;
+      }
+
+      &:last-of-type {
+        color: gray;
+      }
+    }
+  }
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header {
+  background-color: gray;
+}

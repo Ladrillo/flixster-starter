@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import MovieList from './MovieList'
 import './App.css'
-import data from './data/data'
+import hardcodeDdata from './data/data'
 
 const URL = 'https://api.themoviedb.org/3/movie/now_playing'
 const API_KEY = import.meta.env.VITE_API_KEY
@@ -32,14 +33,13 @@ const App = () => {
         const parsed = await response.json()
         setNowPlaying(parsed)
       } catch (e) {
-        console.error(errorMessage)
         setMessage('')
+        console.error(errorMessage)
         setError(errorMessage)
-        setNowPlaying(data)
+        setNowPlaying(hardcodeDdata)
       } finally {
         setMessage(successMessage)
         setLoading(false)
-        console.log(nowPlaying)
       }
     }
     fetchNowPlaying()
@@ -49,6 +49,7 @@ const App = () => {
       {loading && loadingMessage}
       <div className='api-message'>{message}</div>
       <div className='api-error'>{error}</div>
+      <MovieList movies={nowPlaying.results} />
     </div>
   )
 }

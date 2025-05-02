@@ -5,6 +5,7 @@ import SearchBox from './SearchBox'
 import SortSelect from './SortSelect'
 import MovieList from './MovieList'
 import MovieDetails from './MovieDetails'
+import useGenres from './hooks/useGenres'
 import { sorter } from './helpers'
 
 const URL = 'https://api.themoviedb.org/3/movie/now_playing'
@@ -23,6 +24,8 @@ const App = () => {
   const errorMessage = 'Problem with API, using hard-coded data'
   const loadingMessage = 'Loading your movies...'
   const successMessage = 'Movies finally loaded!'
+
+  const genres = useGenres()
 
   useEffect(() => {
     const fetchNowPlaying = async () => {
@@ -87,7 +90,12 @@ const App = () => {
       <footer>
         <p>© {new Date().getFullYear()} Flixter</p>
       </footer>
-      {currentMovie && <MovieDetails movie={currentMovie} close={() => setCurrentMovieId(null)} />}
+      {currentMovie &&
+        <MovieDetails
+          genres={genres}
+          movie={currentMovie}
+          close={() => setCurrentMovieId(null)}
+        />}
     </div>
   )
 }

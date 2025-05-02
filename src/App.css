@@ -125,6 +125,14 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      p {
+        margin-top: 1rem;
+
+        span {
+          font-weight: bold;
+        }
+      }
     }
 
     .close {

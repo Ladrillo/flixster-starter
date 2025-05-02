@@ -10,7 +10,7 @@ export default function MovieDetails({ movie, close }) {
             <div className='content'>
                 <div onClick={close} className="close">&times;</div>
                 <div className="info">
-                    <p>Movie Details:</p>
+                    <h3>Movie Details</h3>
                     <p>Title: {movie.original_title}</p>
                     <p>Release Date: {movie.release_date}</p>
                     <p>Popularity: {movie.popularity}</p>

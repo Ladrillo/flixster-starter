@@ -87,7 +87,7 @@ const App = () => {
       <footer>
         <p>© {new Date().getFullYear()} Flixter</p>
       </footer>
-      {currentMovie && <MovieDetails movie={currentMovie} />}
+      {currentMovie && <MovieDetails movie={currentMovie} close={() => setCurrentMovieId(null)} />}
     </div>
   )
 }

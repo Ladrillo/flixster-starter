@@ -1,62 +1,22 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import nextPage from './data/movies'
 import SearchBox from './SearchBox'
 import SortSelect from './SortSelect'
 import MovieList from './MovieList'
 import MovieDetails from './MovieDetails'
 import useGenres from './hooks/useGenres'
+import useSongs from './hooks/useSongs'
 import { sorter } from './helpers'
 
-const URL = 'https://api.themoviedb.org/3/movie/now_playing'
-const API_KEY = import.meta.env.VITE_API_KEY
-
 const App = () => {
-  const [nowPlaying, setNowPlaying] = useState(null)
-  const [message, setMessage] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [pageNumber, setPageNumber] = useState(5)
+  const [currentMovieId, setCurrentMovieId] = useState(null)
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('')
-  const [currentMovieId, setCurrentMovieId] = useState(null)
-
-  const errorMessage = 'Problem with API, using hard-coded data'
-  const loadingMessage = 'Loading your movies...'
-  const successMessage = 'Movies finally loaded!'
 
   const genres = useGenres()
+  const { nowPlaying, message, error, loading, nextPage, } = useSongs()
 
-  useEffect(() => {
-    const fetchNowPlaying = async () => {
-      setLoading(true)
-      setMessage(loadingMessage)
-      try {
-        throw new Error('Avoiding hammering the real API')
-        const response = await fetch(`${URL}?page=${pageNumber}`, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${API_KEY}`,
-            Accept: 'application/json'
-          }
-        })
-        if (response.status != 200) throw new Error('ugh!')
-        const parsed = await response.json()
-        setNowPlaying(parsed)
-      } catch (e) {
-        setMessage('')
-        console.error(errorMessage)
-        setError(errorMessage)
-        setNowPlaying(nextPage())
-      } finally {
-        setMessage(successMessage)
-        setLoading(false)
-      }
-    }
-    fetchNowPlaying()
-  }, [pageNumber])
-
-  function byTitle(movie) {
+  const byTitle = movie => {
     const searchTerm = search.trim().toLowerCase()
     const actualTitle = movie.original_title.toLowerCase()
     return actualTitle.includes(searchTerm)
@@ -76,7 +36,7 @@ const App = () => {
       </header>
       <main>
         {false && <div className="messages">
-          {loading && <div className='loading-message'>{loadingMessage}</div>}
+          {loading && <div className='loading-message'>{loading}</div>}
           <div className='api-message'>{message}</div>
           <div className='api-error'>{error}</div>
         </div>}
@@ -84,7 +44,7 @@ const App = () => {
           ? <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
           : <div>No movies here!</div>}
         <div>
-          <button onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+          <button onClick={nextPage}>Next</button>
         </div>
       </main>
       <footer>

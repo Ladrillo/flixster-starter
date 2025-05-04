@@ -1,9 +1,24 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function MovieDetails({ movie, close, genres }) {
-  const ref = useRef(null);
+  const background = useRef(null);
+  const closeBtnRef = useRef(null);
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Tab") {
+        e.preventDefault();
+      }
+      if (e.key === "Escape" || e.key === "Enter") {
+        close();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
   const onBackgroundClick = (evt) => {
-    if (evt.target === ref.current) close();
+    if (evt.target === background.current) close();
   };
   return (
     <div
@@ -11,7 +26,7 @@ export default function MovieDetails({ movie, close, genres }) {
       aria-modal="true"
       aria-labelledby="movieTitleId"
       className="modal"
-      ref={ref}
+      ref={background}
       onClick={onBackgroundClick}
     >
       <div className="content">
@@ -35,7 +50,7 @@ export default function MovieDetails({ movie, close, genres }) {
               .slice(0, -2)}
           </p>
         </section>
-        <button aria-label="Close dialog" onClick={close} className="close-btn">
+        <button ref={closeBtnRef} aria-label="Close dialog" onClick={close} className="close-btn">
           Close
         </button>
       </div>

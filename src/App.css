@@ -3,7 +3,7 @@
 :root {
   --header-bg: #282c34;
   --text-light: white;
-  --text-muted: gray;
+  --text-muted: #757575;
   --hover-bg: #777;
   --border-color: #cdcbcb;
   --modal-bg: #29121266;

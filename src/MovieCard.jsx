@@ -2,7 +2,7 @@ export default function MovieCard({ movie, setCurrent }) {
   return (
     <div
       aria-label={`View details for ${movie.original_title}`}
-      className='movie-card'
+      className="movie-card"
       onClick={setCurrent}
       tabIndex={0}
       role="button"
@@ -18,5 +18,5 @@ export default function MovieCard({ movie, setCurrent }) {
         <p> Rating {movie.vote_average}</p>
       </div>
     </div>
-  )
+  );
 }

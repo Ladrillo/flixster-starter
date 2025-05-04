@@ -1,29 +1,29 @@
-import { useState } from 'react'
-import './App.css'
-import SearchBox from './SearchBox'
-import SortSelect from './SortSelect'
-import MovieList from './MovieList'
-import MovieDetails from './MovieDetails'
-import useGenres from './hooks/useGenres'
-import useSongs from './hooks/useSongs'
-import { sorter } from './helpers'
+import { useState } from "react";
+import "./App.css";
+import SearchBox from "./SearchBox";
+import SortSelect from "./SortSelect";
+import MovieList from "./MovieList";
+import MovieDetails from "./MovieDetails";
+import useGenres from "./hooks/useGenres";
+import useSongs from "./hooks/useSongs";
+import { sorter } from "./helpers";
 
 export default function App() {
-  const [currentMovieId, setCurrentMovieId] = useState(null)
-  const [search, setSearch] = useState('')
-  const [sort, setSort] = useState('')
+  const [currentMovieId, setCurrentMovieId] = useState(null);
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
 
-  const genres = useGenres()
-  const { nowPlaying, message, error, loading, nextPage, } = useSongs()
+  const genres = useGenres();
+  const { nowPlaying, message, error, loading, nextPage } = useSongs();
 
-  const byTitle = movie => {
-    const searchTerm = search.trim().toLowerCase()
-    const actualTitle = movie.original_title.toLowerCase()
-    return actualTitle.includes(searchTerm)
-  }
+  const byTitle = (movie) => {
+    const searchTerm = search.trim().toLowerCase();
+    const actualTitle = movie.original_title.toLowerCase();
+    return actualTitle.includes(searchTerm);
+  };
 
-  const moviesToDisplay = nowPlaying?.results.filter(byTitle) || []
-  const currentMovie = nowPlaying?.results.find(mov => mov.id === currentMovieId)
+  const moviesToDisplay = nowPlaying?.results.filter(byTitle) || [];
+  const currentMovie = nowPlaying?.results.find((mov) => mov.id === currentMovieId);
 
   return (
     <div className="App">
@@ -35,14 +35,18 @@ export default function App() {
         </section>
       </header>
       <main>
-        {true && <section className="messages" aria-live="polite">
-          {loading && <p className='loading-message'>{loading}</p>}
-          <p className='api-message'>{message}</p>
-          <p className='api-error'>{error}</p>
-        </section>}
-        {moviesToDisplay.length
-          ? <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
-          : <p role="alert">No movies here!</p>}
+        {false && (
+          <section className="messages" aria-live="polite">
+            {loading && <p className="loading-message">{loading}</p>}
+            <p className="api-message">{message}</p>
+            <p className="api-error">{error}</p>
+          </section>
+        )}
+        {moviesToDisplay.length ? (
+          <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
+        ) : (
+          <p role="alert">No movies here!</p>
+        )}
         <div>
           <button onClick={nextPage}>Load More Movies</button>
         </div>
@@ -50,12 +54,9 @@ export default function App() {
       <footer>
         <p>© {new Date().getFullYear()} Flixter</p>
       </footer>
-      {currentMovie &&
-        <MovieDetails
-          genres={genres}
-          movie={currentMovie}
-          close={() => setCurrentMovieId(null)}
-        />}
+      {currentMovie && (
+        <MovieDetails genres={genres} movie={currentMovie} close={() => setCurrentMovieId(null)} />
+      )}
     </div>
-  )
+  );
 }

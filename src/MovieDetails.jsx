@@ -5,12 +5,8 @@ export default function MovieDetails({ movie, close, genres }) {
   const closeBtnRef = useRef(null);
   useEffect(() => {
     const onKeyDown = (e) => {
-      if (e.key === "Tab") {
-        e.preventDefault();
-      }
-      if (e.key === "Escape" || e.key === "Enter") {
-        close();
-      }
+      if (e.key === "Tab") e.preventDefault();
+      if (e.key === "Escape" || e.key === "Enter") close();
     };
     document.addEventListener("keydown", onKeyDown);
     return () => {
@@ -39,12 +35,8 @@ export default function MovieDetails({ movie, close, genres }) {
             src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
             alt={`Movie poster for ${movie.original_title}`}
           />
-          <p>
-            <span>Release Date:</span> {movie.release_date}
-          </p>
-          <p>
-            <span>Overview:</span> {movie.overview}
-          </p>
+          <p><span>Release Date:</span> {movie.release_date}</p>
+          <p><span>Overview:</span> {movie.overview}</p>
           <p>
             <span>Genres:</span>{" "}
             {movie.genre_ids

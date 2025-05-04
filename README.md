@@ -4,9 +4,9 @@
 
 Submitted by: Gabriel Cabrejas
 
-Estimated time spent: 8 hours spent in total
+Estimated time spent: 12 hours spent in total
 
-Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application: [Flixster Deployed Site](https://flixster-starter-kea9.onrender.com/)
 
 ### Application Features
 
@@ -33,43 +33,42 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [X] Most recent search results are cleared and all current movies are displayed in a grid view
 - [X] **Design Features**
   - [X] Website implements all of the following accessibility features:
-    - [ ] Semantic HTML
-    - [ ] [Color contrast](https://webaim.org/resources/contrastchecker/)
-    - [ ] Alt text for images 
+    - [X] Semantic HTML
+    - [X] [Color contrast](https://webaim.org/resources/contrastchecker/)
+    - [X] Alt text for images
   - [ ] Website implements responsive web design.
-    - [ ] Uses CSS Flexbox or CSS Grid
-    - [ ] Movie tiles and images shrink/grow in response to window size
-  - [ ] Users can click on a movie tile to view more details about a movie in a pop-up modal.
-    - [ ] The pop-up window is centered in the screen and does not occupy the entire screen.
-    - [ ] The pop-up window has a shadow to show that it is a pop-up and appears floating on the screen.
-    - [ ] The backdrop of the pop-up appears darker or in a different shade than before. including:
-    - [ ] The pop-up displays additional details about the moving including:
-      - [ ] Runtime in minutes
-      - [ ] Backdrop poster
-      - [ ] Release date
-      - [ ] Genres
-      - [ ] An overview
-  - [ ] Users can use a drop-down menu to sort movies.
-    - [ ] Drop-down allows movies to be sorted by:
-      - [ ] Title (alphabetic, A-Z)
-      - [ ] Release date (chronologically, most recent to oldest)
-      - [ ] Rating (descending, highest to lowest)
+    - [X] Uses CSS Flexbox or CSS Grid
+    - [X] Movie tiles and images shrink/grow in response to window size
+  - [X] Users can click on a movie tile to view more details about a movie in a pop-up modal.
+    - [X] The pop-up window is centered in the screen and does not occupy the entire screen.
+    - [X] The pop-up window has a shadow to show that it is a pop-up and appears floating on the screen.
+    - [X] The backdrop of the pop-up appears darker or in a different shade than before. including:
+    - [X] The pop-up displays additional details about the moving including:
+      - [ ] Runtime in minutes (this is not in the data)
+      - [X] Backdrop poster
+      - [X] Release date
+      - [X] Genres
+      - [X] An overview
+  - [X] Users can use a drop-down menu to sort movies.
+    - [X] Drop-down allows movies to be sorted by:
+      - [X] Title (alphabetic, A-Z)
+      - [X] Release date (chronologically, most recent to oldest)
+      - [X] Rating (descending, highest to lowest)
     - [ ] When a sort option is clicked, movies display in a grid according to selected criterion.
-  - [ ] Website displays:
-    - [ ] Header section
-    - [ ] Banner section
-    - [ ] Search bar
-    - [ ] Movie grid
-    - [ ] About section
-    - [ ] Contact section
-    - [ ] Footer section
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it. 
-  - [ ] - [ ] **Deployment**
-  - [ ] Website is deployed via Render.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough. 
+  - [X] Website displays:
+    - [X] Header section
+    - [ ] Banner section (this was not in wireframe)
+    - [X] Search bar
+    - [X] Movie grid
+    - [X] About section
+    - [X] Contact section
+    - [X] Footer section
+    - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
+- [X] **Deployment**
+  - [X] Website is deployed via Render.
+  - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
 
 #### STRETCH FEATURES
-
 
 - [ ] **Embedded Movie Trailers**
   - [ ] Within the pop-up modal displaying a movie's details, the movie trailer is viewable.
@@ -82,7 +81,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been favorited by the user.
   - [ ] If the movie is already favorited:
     - [ ] Clicking on the visual element should mark the movie as *not* favorited.
-    - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been unfavorited. 
+    - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been unfavorited.
 - [ ] **Watched Checkbox**
   - [ ] For each movie displayed, users can mark the movie as watched.
   - [ ] There should be visual element (such as an eye icon) on each movie's tile to show whether or not the movie has been watched.
@@ -110,15 +109,15 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Reflection
 
-* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
 Add your response here
 
-* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
 Add your response here
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
 Add your response here
 

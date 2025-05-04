@@ -52,6 +52,8 @@ export default function App() {
         </div>
       </main>
       <footer>
+        <p>About us: We are FLIXTER!</p>
+        <p>Contact us: <a href="https://www.codepath.org/">CodePath.org</a></p>
         <p>© {new Date().getFullYear()} Flixter</p>
       </footer>
       {currentMovie && (

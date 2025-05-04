@@ -51,6 +51,13 @@ header {
   justify-content: space-around;
 }
 
+
+/* === Footer === */
+
+footer {
+  padding: 1rem;
+}
+
 /* === Buttons === */
 
 button {

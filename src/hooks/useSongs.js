@@ -20,7 +20,7 @@ const useSongs = () => {
       setLoading(true)
       setMessage(loadingMessage)
       try {
-        // throw new Error('Avoiding hammering the real API')
+        throw new Error('Avoiding hammering the real API')
         const response = await fetch(`${URL}?page=${pageNumber}`, {
           method: 'GET',
           headers: {

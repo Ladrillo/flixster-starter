@@ -32,7 +32,7 @@ export default function useGenres() {
   useEffect(() => {
     async function getMappings() {
       try {
-        // throw new Error('Avoiding hammering the real API')
+        throw new Error('Avoiding hammering the real API')
         const response = await fetch(URL, {
           method: 'GET',
           headers: {

@@ -29,22 +29,22 @@ export default function App() {
     <div className="App">
       <header>
         <h1>🎬 Flixter 🎥</h1>
-        <div className='header-bottom'>
+        <section className="header-bottom" aria-label="Search and sort controls">
           <SearchBox search={search} setSearch={setSearch} />
           <SortSelect sort={sort} setSort={setSort} />
-        </div>
+        </section>
       </header>
       <main>
-        {false && <div className="messages"> leave of ex
-          {loading && <div className='loading-message'>{loading}</div>}
-          <div className='api-message'>{message}</div>
-          <div className='api-error'>{error}</div>
-        </div>}
+        {true && <section className="messages" aria-live="polite">
+          {loading && <p className='loading-message'>{loading}</p>}
+          <p className='api-message'>{message}</p>
+          <p className='api-error'>{error}</p>
+        </section>}
         {moviesToDisplay.length
           ? <MovieList setCurrentMovie={setCurrentMovieId} movies={sorter(moviesToDisplay, sort)} />
-          : <div>No movies here!</div>}
+          : <p role="alert">No movies here!</p>}
         <div>
-          <button onClick={nextPage}>Next</button>
+          <button onClick={nextPage}>Load More Movies</button>
         </div>
       </main>
       <footer>

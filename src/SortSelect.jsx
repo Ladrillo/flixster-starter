@@ -4,11 +4,16 @@ export default function SortSelect({ sort, setSort }) {
     setSort(value)
   }
   return (
-    <select value={sort} onChange={onChange}>
-      <option value=''>---Sort by---</option>
-      <option value='title'>Title</option>
-      <option value='date'>Release date</option>
-      <option value='rating'>Rating</option>
-    </select>
+    <>
+      <label htmlFor="sort-select" className="visually-hidden">
+        Sort movies by
+      </label>
+      <select id="sortSelect" value={sort} onChange={onChange}>
+        <option value=''>---Sort by---</option>
+        <option value='title'>Title</option>
+        <option value='date'>Release date</option>
+        <option value='rating'>Rating</option>
+      </select>
+    </>
   )
 }

@@ -16,17 +16,16 @@ export default function SearchBox({ search, setSearch }) {
 	}
 	return (
 		<div className='search-box'>
-			<form onSubmit={onSubmit}>
+			<form onSubmit={onSubmit} role="search">
 				<label htmlFor="movieSearch" className="visually-hidden">Search for a movie</label>
 				<input
 					id="movieSearch"
-					role="search"
 					type="text"
 					value={value}
 					placeholder='Search'
 					onChange={onChange}
 				/>
-				<button type="submit" aria-label="Submit movie search">
+				<button type="submit" aria-label="Submit movie search input field">
 					Search
 				</button>
 			</form>

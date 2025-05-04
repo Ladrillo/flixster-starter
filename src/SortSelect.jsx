@@ -5,7 +5,7 @@ export default function SortSelect({ sort, setSort }) {
   }
   return (
     <>
-      <label htmlFor="sort-select" className="visually-hidden">
+      <label htmlFor="sortSelect" className="visually-hidden">
         Sort movies by
       </label>
       <select id="sortSelect" value={sort} onChange={onChange}>

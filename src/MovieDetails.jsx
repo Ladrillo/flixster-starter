@@ -35,7 +35,10 @@ export default function MovieDetails({ movie, close, genres }) {
         </div>
         <section className="info">
           <h3 id="movieTitleId">{movie.original_title}</h3>
-          <img src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`} alt="Movie poster" />
+          <img
+            src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
+            alt={`Movie poster for ${movie.original_title}`}
+          />
           <p>
             <span>Release Date:</span> {movie.release_date}
           </p>

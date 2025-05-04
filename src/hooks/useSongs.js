@@ -4,7 +4,7 @@ import nextPage from '../data/movies'
 const URL = 'https://api.themoviedb.org/3/movie/now_playing'
 const API_KEY = import.meta.env.VITE_API_KEY
 
-const useSongs = () => {
+export default function useSongs() {
   const [nowPlaying, setNowPlaying] = useState(null)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
@@ -50,5 +50,3 @@ const useSongs = () => {
     nextPage: () => setPageNumber(pageNumber + 1)
   }
 }
-
-export default useSongs

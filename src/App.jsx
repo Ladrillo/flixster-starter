@@ -8,7 +8,7 @@ import useGenres from './hooks/useGenres'
 import useSongs from './hooks/useSongs'
 import { sorter } from './helpers'
 
-const App = () => {
+export default function App() {
   const [currentMovieId, setCurrentMovieId] = useState(null)
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('')
@@ -35,7 +35,7 @@ const App = () => {
         </div>
       </header>
       <main>
-        {false && <div className="messages">
+        {false && <div className="messages"> leave of ex
           {loading && <div className='loading-message'>{loading}</div>}
           <div className='api-message'>{message}</div>
           <div className='api-error'>{error}</div>
@@ -59,5 +59,3 @@ const App = () => {
     </div>
   )
 }
-
-export default App

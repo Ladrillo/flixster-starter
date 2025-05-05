@@ -14,7 +14,7 @@ export default function MovieDetails({ movie, close, genres }) {
     };
   }, []);
   const onBackgroundClick = (evt) => {
-    if (evt.target === background.current) close();
+    if (evt.target === background.current) close(); // don't steal focus from the card!
   };
   return (
     <div
@@ -26,7 +26,13 @@ export default function MovieDetails({ movie, close, genres }) {
       onClick={onBackgroundClick}
     >
       <div className="content">
-        <div role="button" aria-label="Close dialog" onClick={close} className="close">
+        <div
+          role="button"
+          aria-label="Close dialog"
+          onClick={close}
+          onMouseDown={(e) => e.preventDefault()}
+          className="close"
+        >
           &times;
         </div>
         <section className="info">
@@ -45,7 +51,13 @@ export default function MovieDetails({ movie, close, genres }) {
               .slice(0, -2)}
           </p>
         </section>
-        <button ref={closeBtnRef} aria-label="Close dialog" onClick={close} className="close-btn">
+        <button
+          ref={closeBtnRef}
+          aria-label="Close dialog"
+          onMouseDown={(e) => e.preventDefault()} // don't steal focus from the card!
+          onClick={close}
+          className="close-btn"
+        >
           Close
         </button>
       </div>

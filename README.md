@@ -103,9 +103,7 @@ Deployed Application: [Flixster Deployed Site](https://flixster-starter-kea9.onr
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+[Click HERE to watch the Walkthrough Video](https://www.loom.com/share/27b497061f0c4a718efa482696fc6d12?sid=66c6dbb3-a1c4-4151-ac1f-f7ee1d9eaa0f)
 
 ### Reflection
 
@@ -123,7 +121,7 @@ Simulated answer, lots went well...
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+No libraries used other than the required ones for React
 
 ### Shout out
 

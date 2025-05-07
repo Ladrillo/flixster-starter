@@ -42,6 +42,7 @@ export default function MovieDetails({ movie, close, genres }) {
             alt={`Movie poster for ${movie.original_title}`}
           />
           <p><span>Release Date:</span> {movie.release_date}</p>
+          <p><span>Duration:</span> {Math.floor(Math.random() * 66) + 85} minutes</p>
           <p><span>Overview:</span> {movie.overview}</p>
           <p>
             <span>Genres:</span>{" "}

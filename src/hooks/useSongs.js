@@ -11,7 +11,7 @@ export default function useSongs() {
   const [loading, setLoading] = useState(false)
   const [pageNumber, setPageNumber] = useState(1)
 
-  const errorMessage = 'Problem with API, using hard-coded songs'
+  const errorMessage = 'Songs: Using hard-coded data to avoid hammering the real API'
   const loadingMessage = 'Loading your movies...'
   const successMessage = 'Movies finally loaded!'
 
@@ -20,7 +20,7 @@ export default function useSongs() {
       setLoading(true)
       setMessage(loadingMessage)
       try {
-        throw new Error('Avoiding hammering the real API')
+        throw new Error(errorMessage)
         const response = await fetch(`${URL}?page=${pageNumber}`, {
           method: 'GET',
           headers: {
@@ -33,8 +33,8 @@ export default function useSongs() {
         setNowPlaying(parsed)
       } catch (e) {
         setMessage('')
-        console.warn(errorMessage)
-        setError(errorMessage)
+        console.warn(e.message)
+        setError(e.message)
         setNowPlaying(nextPage())
       } finally {
         setMessage(successMessage)

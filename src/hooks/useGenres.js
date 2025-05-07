@@ -32,7 +32,7 @@ export default function useGenres() {
   useEffect(() => {
     async function getMappings() {
       try {
-        throw new Error('Avoiding hammering the real API')
+        throw new Error('Genres: Using hard-coded data to avoid hammering the real API')
         const response = await fetch(URL, {
           method: 'GET',
           headers: {
@@ -44,7 +44,7 @@ export default function useGenres() {
         const parsed = await response.json()
         setMappings(Object.fromEntries(parsed.genres.map(({ id, name }) => [id, name])))
       } catch (e) {
-        console.warn('Problem with API, using hard-coded genre mappings')
+        console.warn(e.message)
       }
     }
     getMappings()

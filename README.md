@@ -44,7 +44,7 @@ Deployed Application: [Flixster Deployed Site](https://flixster-starter-kea9.onr
     - [X] The pop-up window has a shadow to show that it is a pop-up and appears floating on the screen.
     - [X] The backdrop of the pop-up appears darker or in a different shade than before. including:
     - [X] The pop-up displays additional details about the moving including:
-      - [ ] Runtime in minutes (this is not in the data)
+      - [X] Runtime in minutes
       - [X] Backdrop poster
       - [X] Release date
       - [X] Genres
@@ -54,10 +54,10 @@ Deployed Application: [Flixster Deployed Site](https://flixster-starter-kea9.onr
       - [X] Title (alphabetic, A-Z)
       - [X] Release date (chronologically, most recent to oldest)
       - [X] Rating (descending, highest to lowest)
-    - [ ] When a sort option is clicked, movies display in a grid according to selected criterion.
+    - [X] When a sort option is clicked, movies display in a grid according to selected criterion.
   - [X] Website displays:
     - [X] Header section
-    - [ ] Banner section (this was not in wireframe)
+    - [X] Banner section
     - [X] Search bar
     - [X] Movie grid
     - [X] About section
